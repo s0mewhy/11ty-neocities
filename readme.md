@@ -1,4 +1,5 @@
-my personal website; generates static pages with 11ty. requires node.js and npm. 
+my personal website https://s0mewhy.neocities.org. 
+generates static pages with 11ty. requires node.js and npm. 
 
 # getting started
 
@@ -20,4 +21,4 @@ hosted at https://s0mewhy.neocities.org
 
 automatic build/deploy on commit to main using [bcomnes' deploy-to-neocities github action](https://github.com/bcomnes/deploy-to-neocities)
 
-thank you to [uuupah](https://github.com/uuupah) for getting me started on 11ty with [flamed fury's 11ty guide](https://flamedfury.com/guides/11ty-homepage-neocities/) and for imagecleaner.py for image compression
+thank you to [uuupah](https://github.com/uuupah) for getting me started on 11ty with [flamed fury's 11ty guide](https://flamedfury.com/guides/11ty-homepage-neocities/), for imagecleaner.py for image compression, and for all your coding advice!

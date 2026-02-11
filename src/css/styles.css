@@ -1,144 +1,365 @@
-/* Global variables. */
+
 :root {
-  /* Set sans-serif & mono fonts */
-  --sans-font: -apple-system, BlinkMacSystemFont, "Avenir Next", Avenir,
-    "Nimbus Sans L", Roboto, Noto, "Segoe UI", Arial, Helvetica,
-    "Helvetica Neue", sans-serif;
-  --mono-font: Consolas, Menlo, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
-
-  /* Default (light) theme */
-  --bg: #fff;
-  --accent-bg: #f5f7ff;
-  --text: #333;
-  --text-light: #585858;
-  --border: #d8dae1;
-  --accent: #0d47a1;
+    /* colors */
+    --bg-color: #171719; 
+    --accent-color: #c60c29; 
+    --accent-color2: #a11227;
+    --text-color: #afb3b6;
+    --console-hover: #afb3b6;
+    --bsky: #4d88ff;
+    --tumblr: #894ea5;
+    /* Default transparent border */
+    --debug-border: #ff000000;
+    /* Uncomment the line below to turn on red borders, helpful for debugging! */
+    /* --debug-border: #ff0000; */
+    --bg-img: url("/img/art/dancer-banner1.jpg");
 }
 
-/* Dark theme */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg: #212121;
-    --accent-bg: #2b2b2b;
-    --text: #dcdcdc;
-    --text-light: #ababab;
-    --border: #666;
-    --accent: #ffb300;
-  }
+.icons {
+  /* set svg color to #c60c29; */
+  filter: invert(13%) sepia(88%) saturate(4420%) hue-rotate(343deg) brightness(86%) contrast(101%);
 }
 
-* {
-  box-sizing: border-box;
+.icons:hover {
+  /* set svg color to #999999; */
+  filter: invert(63%) sepia(1%) saturate(0%) hue-rotate(153deg) brightness(97%) contrast(92%);
 }
 
-html {
-  /* Set the font globally */
-  font-family: var(--sans-font);
-  scroll-behavior: smooth;
+@font-face {
+    font-family: 'Ubuntu Mono', sans-serif;
+    src: url('https://fonts.googleapis.com/css?family=Ubuntu+Mono');
 }
 
-/* Make the body a nice central block */
 body {
-  color: var(--text);
-  background: var(--bg);
-  font-size: 1.15rem;
-  line-height: 1.5;
-  margin: 0 auto;
-  max-width: 40em;
-  padding: 0 1em;
+    color: var(--text-color);
+    font-family: 'Ubuntu Mono', monospace; /*Courier New*/
+    margin: 0;
+    background-color: var(--bg-color);
+    /* optional background image */
+    /* background-size: 65px; */
 }
 
-body > header {
-  text-align: center;
-  padding: 0 0.5rem 2rem 0.5rem;
-  box-sizing: border-box;
+/* the "container" is what wraps your entire website */
+/* if you want something (like the header) to be Wider than
+the other elements, you will need to move that div outside
+of the container */
+.container {
+    max-width: 900px;
+    /* this is the width of your layout! */
+    /* if you change the above value, scroll to the bottom
+    and change the media query according to the comment! */
+    margin: 0 auto;
+    /* this centers the entire page */
+    display:flex;
+    flex-wrap:wrap;
 }
 
-body > header h1 {
-  max-width: 100%;
-  margin: 1rem auto;
-}
-
-/* Format navigation */
-nav {
-  border-bottom: 1px solid var(--border);
-  font-size: 1rem;
-  line-height: 2;
-  padding: 1rem 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  padding-bottom: 2rem;
-}
-
-nav a {
-  margin: 1rem 1rem 0 0;
-  color: var(--text) !important;
-  padding: 0.1rem 1rem;
-}
-
-nav a:hover {
-  color: var(--accent) !important;
-}
-
-nav a:last-child {
-  margin-right: 0;
-}
-
-/* Reduce nav side on mobile */
-@media only screen and (max-width: 750px) {
-  nav a {
-    border: none;
-    padding: 0;
-    color: var(--accent);
+/* the area below is for all links on your page
+EXCEPT for the navigation */
+.container a {
+    color: var(--accent-color);
+    font-weight: bold;
     text-decoration: underline;
-    line-height: 1;
-  }
 }
 
-/* Add a little padding to ensure spacing is correct between content and nav */
-main {
-  padding-top: 1.5rem;
+a.bsky {
+    color: var(--bsky);
 }
-
-body > footer {
-  margin-top: 4rem;
-  padding: 2rem 1rem 1.5rem 1rem;
-  color: var(--text-light);
-  font-size: 0.9rem;
-  text-align: center;
-  border-top: 1px solid var(--border);
-}
-
-/* Format headers */
-
-h1 {
-  font-size: 3rem;
-}
-
-h2 {
-  font-size: 2.6rem;
-  margin-top: 3rem;
-}
-
-/* Reduce header size on mobile */
-@media only screen and (max-width: 720px) {
-  h1 {
-    font-size: 2.5rem;
-  }
-
-  h2 {
-    font-size: 2.1rem;
-  }
-}
-
-/* Format links */
-a,
-a:visited {
-  color: var(--accent);
+a.tumblr {
+    color: var(--tumblr);
 }
 
 a:hover {
-  text-decoration: none;
+    color: var(--console-hover);
 }
+
+#header-area {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    /* height: 150px; */
+    /* this is only for a background image! */
+    /* if you want to put images IN the header,
+    you can add them directly to the <div id="header"></div> element! */
+    /* background-image: var(--header-image); */
+    /* background-size: 100%; */
+}
+
+/* navigation section!! */
+#navbar {
+    height: 50px;
+    /* navbar color */
+    background-color: var(--accent-color);
+    width: 100%;
+}
+
+#navbar ul {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    justify-content: space-evenly;
+}
+
+#navbar ul.ul2 {
+  background-color: var(--accent-color2);
+}
+
+#navbar ul.ul3 {
+  background-color: #171719;
+  color: var(--accent-color);
+}
+
+#navbar li {
+    padding-top: 7px;
+    font-size: 28px;
+}
+
+/* navigation links */
+#navbar li a {
+    /* navbar text color */
+    color: var(--bg-color);
+    /* this removes the underline */
+    text-decoration: none;
+}
+
+/* navigation link when a link is hovered over */
+#navbar li a:hover {
+    /* color: #a49cba; */
+    color: var(--console-hover);
+}
+
+.icon-bar {
+    /* black bar */
+    /*background-image: var(--bg-img);*/
+    height: 50px;
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+}
+
+.icon-bar ul {
+    display: flex;
+    padding: 10px;
+    margin: 0;
+    list-style-type: none;
+    justify-content: right;
+    height: 60%;
+    /* border: 1px solid red; */
+}
+
+.icon-bar li {
+    padding-left: 10px;
+    padding-right: 10px;
+    height: 100%;
+    /* border: 1px solid white; */
+}
+
+.icon-bar img {
+    height: 100%;
+    /* border: 1px solid red; */
+}
+
+.home-main section {
+    border: 0px solid var(--debug-border);
+}
+
+.center {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    border: 1px solid var(--debug-border);
+}
+
+.intro-section {
+    display: flex;
+}
+
+.intro-section img {
+    max-width: 100%;
+    float: left;
+}
+
+.described-images {
+    justify-content: space-between;
+    display: flex;
+    border: 1px solid var(--debug-border);
+}
+
+.described-images img {
+    height: 50px;
+}
+
+.flex-block {
+    /* width: 40%; */
+    flex: 1;
+    padding-left: 5%;
+    padding-right: 5%;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid var(--debug-border);
+}
+
+.flex-block h2 {
+    text-align: center;
+}
+
+.text-span {
+    margin: 0;
+    padding: 0;
+}
+
+/* this is the color of the main content area,
+between the sidebars! */
+main {
+    /*background-image: var(--bg-img);*/
+    flex: 1;
+
+    /* order: 2; */
+}
+
+.full-width {
+    width: 100%;
+}
+
+#footer {
+    /* background color for footer */
+    background-color: var(--bg-color);
+    height: 50px;
+    width: 100%;
+    text-align: center;
+    /* vertical-align: middle; */
+}
+
+#footer p {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+#footer a {
+    color: var(--bg-color);
+    margin-top: 0;
+    padding-top: 0;
+}
+
+#footer a:hover {
+    color: var(--text-color);
+}
+
+/* columns (mobile) */
+.container > * {
+    width:100%;
+}
+
+.img {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+@media (max-width:900px) {
+    /*  */
+    .intro-section {
+        flex-direction: column-reverse;
+    }
+    .center{
+        width: auto;
+    }
+    /*  */
+    .described-images {
+        flex-direction: column;
+    }
+    .left-block,
+    .right-block {
+        width: auto;
+    }
+}
+
+/* gallery code */
+#gallery {
+   line-height:0;
+   -webkit-column-count:3; /* split it into 3 columns */
+   -moz-column-count:3;
+   -ms-column-count:3;
+   column-count:3;
+   -webkit-column-gap:5px; /* give it a 5px gap between columns */
+   -moz-column-gap:5px;
+   -ms-column-gap:5px;
+   column-gap:5px;
+}
+
+.gallery-img {
+   width: 100%;
+   height: auto;
+   margin-bottom:5px; /* to match column gap */
+   /* grayscale for show, for color-on-hover-effect */
+   /*filter:grayscale(100%); */
+   transition: filter 1s;
+}
+
+.gallery-img:hover {
+  filter:none;
+}
+
+@media (max-width: 800px) {
+   #gallery {
+    -moz-column-count:    2;
+    -webkit-column-count: 2;
+    -ms-column-count:     2;
+    column-count:         2;
+   }
+}
+
+@media (max-width: 400px) {
+   #gallery {
+    -moz-column-count:    1;
+    -webkit-column-count: 1;
+    -ms-column-count:     1;
+    column-count:         1;
+   }
+}
+/* end: gallery code */
+/* lightbox code */
+.trans {
+  transition:all .25s ease
+  }
+  
+.lightbox {
+  position:fixed;
+  width:100%;
+  height:100%;
+  text-align:center;
+  top:0;
+  left:0;
+  background-color:rgba(0,0,0,.75);
+  z-index:999;
+  opacity:0;
+  pointer-events:none
+  }
+  
+.lightbox img {
+  max-width:100%;
+  max-height:100%;
+  position:relative;
+  top:-100%;
+  transition:all .5 ease
+  }
+  
+.lightbox:target {
+  outline:0;
+  top:0;
+  opacity:1;
+  pointer-events:auto;
+  transition:all .2s ease
+  }
+  
+.lightbox:target img {
+  top:0;
+  top:50%;
+  transform:translateY(-50%)
+  }
+  
+/* end: lightbox code */
