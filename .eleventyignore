@@ -1,0 +1,3 @@
+# ignore unfinished pages
+./src/blog.html
+./src/blog/
