@@ -1,26 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 
-  <head>
+<head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link rel="stylesheet" href="/css/styles.css"/>
     <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
     <title>{{ title }}</title>
-  </head>
+</head>
 
-  <div class="container">
-    <body>
-      <header>{% include 'partials/header.njk' %}</header>
+<body>
+    <div class="container">
+        <header>{% include 'partials/header.njk' %}</header>
 
-      <nav>{% include 'partials/navigation.njk' %}</nav>
+        <nav>{% include 'partials/navigation.njk' %}</nav>
 
-      <main class="home-main">
+        <main class="home-main">
+            {{ content | safe }}
+        </main>
 
-        {{ content | safe }}
-
-      </main>
-
-      <footer>{% include 'partials/footer.njk' %}</footer>
-    </body>
+        <footer>{% include 'partials/footer.njk' %}</footer>
   </div>
+</body>

@@ -1,11 +1,11 @@
-
 :root {
     /* colors */
-    --bg-color: #171719; 
-    --accent-color: #c60c29; 
+    --bg-color: #171719;
+    --accent-color: #c60c29;
     --accent-color2: #a11227;
     --text-color: #afb3b6;
     --console-hover: #afb3b6;
+    --orange: #d8601a;
     --bsky: #4d88ff;
     --tumblr: #894ea5;
     /* Default transparent border */
@@ -16,13 +16,13 @@
 }
 
 .icons {
-  /* set svg color to #c60c29; */
-  filter: invert(13%) sepia(88%) saturate(4420%) hue-rotate(343deg) brightness(86%) contrast(101%);
+    /* set svg color to #c60c29; */
+    filter: invert(13%) sepia(88%) saturate(4420%) hue-rotate(343deg) brightness(86%) contrast(101%);
 }
 
 .icons:hover {
-  /* set svg color to #999999; */
-  filter: invert(63%) sepia(1%) saturate(0%) hue-rotate(153deg) brightness(97%) contrast(92%);
+    /* set svg color to #999999; */
+    filter: invert(63%) sepia(1%) saturate(0%) hue-rotate(153deg) brightness(97%) contrast(92%);
 }
 
 @font-face {
@@ -32,7 +32,8 @@
 
 body {
     color: var(--text-color);
-    font-family: 'Ubuntu Mono', monospace; /*Courier New*/
+    font-family: 'Ubuntu Mono', monospace;
+    /*Courier New*/
     margin: 0;
     background-color: var(--bg-color);
     /* optional background image */
@@ -50,8 +51,8 @@ of the container */
     and change the media query according to the comment! */
     margin: 0 auto;
     /* this centers the entire page */
-    display:flex;
-    flex-wrap:wrap;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 /* the area below is for all links on your page
@@ -62,9 +63,14 @@ EXCEPT for the navigation */
     text-decoration: underline;
 }
 
+.orange {
+    color: var(--orange);
+}
+
 a.bsky {
     color: var(--bsky);
 }
+
 a.tumblr {
     color: var(--tumblr);
 }
@@ -103,12 +109,12 @@ a:hover {
 }
 
 #navbar ul.ul2 {
-  background-color: var(--accent-color2);
+    background-color: var(--accent-color2);
 }
 
 #navbar ul.ul3 {
-  background-color: #171719;
-  color: var(--accent-color);
+    background-color: #171719;
+    color: var(--accent-color);
 }
 
 #navbar li {
@@ -241,7 +247,7 @@ main {
 }
 
 #footer a {
-    color: var(--bg-color);
+    color: var(--accent-color);
     margin-top: 0;
     padding-top: 0;
 }
@@ -251,27 +257,31 @@ main {
 }
 
 /* columns (mobile) */
-.container > * {
-    width:100%;
+.container>* {
+    width: 100%;
 }
 
 .img {
     padding-top: 10px;
-    padding-bottom: 10px;
+    padding-bottom: 20px;
 }
 
 @media (max-width:900px) {
+
     /*  */
     .intro-section {
         flex-direction: column-reverse;
     }
-    .center{
+
+    .center {
         width: auto;
     }
+
     /*  */
     .described-images {
         flex-direction: column;
     }
+
     .left-block,
     .right-block {
         width: auto;
@@ -280,86 +290,123 @@ main {
 
 /* gallery code */
 #gallery {
-   line-height:0;
-   -webkit-column-count:2; /* split it into 2 columns */
-   -moz-column-count:2;
-   -ms-column-count:2;
-   column-count:2;
-   -webkit-column-gap:5px; /* give it a 5px gap between columns */
-   -moz-column-gap:5px;
-   -ms-column-gap:5px;
-   column-gap:5px;
+    line-height: 0;
+    -webkit-column-count: 2;
+    /* split it into 2 columns */
+    -moz-column-count: 2;
+    -ms-column-count: 2;
+    column-count: 2;
+    -webkit-column-gap: 5px;
+    /* give it a 5px gap between columns */
+    -moz-column-gap: 5px;
+    -ms-column-gap: 5px;
+    column-gap: 5px;
+}
+
+/* container for cw text */
+.gallery-img-container {
+    position: relative; 
+}
+
+.content-warning {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    padding-left: 5px;
+    padding-right: 5px;
+    /*prevent text from obstructing clicking the image */
+    pointer-events: none; 
+}
+
+/* blur for cw images */
+.gallery-img-blur {
+    width: 100%;
+    height: auto;
+    margin-bottom: 5px;
+    /* to match column gap */
+    filter: blur(20px); 
+    /* prevent blur effect from spilling over the edge of the image boundary */
+    clip-path: inset(0px); 
+    object-fit: cover;
+    transition: filter 1s;
 }
 
 .gallery-img {
-   width: 100%;
-   height: auto;
-   margin-bottom:5px; /* to match column gap */
-   /* grayscale for show, for color-on-hover-effect */
-   /*filter:grayscale(100%); */
-   transition: filter 1s;
+    width: 100%;
+    height: auto;
+    margin-bottom: 5px;
+    /* to match column gap */
+    /* grayscale for show, for color-on-hover-effect */
+    /*filter:grayscale(100%); */
+    transition: filter 1s;
 }
 
+/*  could do something cool with this,
+    like have your gallery images be b+w
+    and appear in color on hover/click */
 .gallery-img:hover {
-  filter:none;
+    filter: none;
 }
 
 @media (max-width: 800px) {
-   #gallery {
-    -moz-column-count:    2;
-    -webkit-column-count: 2;
-    -ms-column-count:     2;
-    column-count:         2;
-   }
+    #gallery {
+        -moz-column-count: 2;
+        -webkit-column-count: 2;
+        -ms-column-count: 2;
+        column-count: 2;
+    }
 }
 
 @media (max-width: 400px) {
-   #gallery {
-    -moz-column-count:    1;
-    -webkit-column-count: 1;
-    -ms-column-count:     1;
-    column-count:         1;
-   }
+    #gallery {
+        -moz-column-count: 1;
+        -webkit-column-count: 1;
+        -ms-column-count: 1;
+        column-count: 1;
+    }
 }
+
 /* end: gallery code */
 /* lightbox code */
 .trans {
-  transition:all .25s ease
-  }
-  
+    transition: all .25s ease
+}
+
 .lightbox {
-  position:fixed;
-  width:100%;
-  height:100%;
-  text-align:center;
-  top:0;
-  left:0;
-  background-color:rgba(0,0,0,.75);
-  z-index:999;
-  opacity:0;
-  pointer-events:none
-  }
-  
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, .75);
+    z-index: 999;
+    opacity: 0;
+    pointer-events: none
+}
+
 .lightbox img {
-  max-width:100%;
-  max-height:100%;
-  position:relative;
-  top:-100%;
-  transition:all .5 ease
-  }
-  
+    max-width: 100%;
+    max-height: 100%;
+    position: relative;
+    top: -100%;
+    transition: all .5 ease
+}
+
 .lightbox:target {
-  outline:0;
-  top:0;
-  opacity:1;
-  pointer-events:auto;
-  transition:all .2s ease
-  }
-  
+    outline: 0;
+    top: 0;
+    opacity: 1;
+    pointer-events: auto;
+    transition: all .2s ease
+}
+
 .lightbox:target img {
-  top:0;
-  top:50%;
-  transform:translateY(-50%)
-  }
-  
+    top: 0;
+    top: 50%;
+    transform: translateY(-50%)
+}
+
 /* end: lightbox code */
