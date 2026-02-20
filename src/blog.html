@@ -3,11 +3,16 @@ title: s0mewhy/blog
 layout: layouts/base.njk
 ---
 
-These are all of my amazing blog posts, enjoy!
-<ul>
-    {% for post in collections.blog | reverse %}
-    <li>
-        <a href="/blog/{{post.data.page.fileSlug}}">{{ post.data.title }}</a>
-    </li>
-    {% endfor %}
-</ul>
+<div class="center">
+    <h2>s0mewhy/blog</h2>
+    <h3>
+        <div class="flex-container">
+            <ul class="no-bullets">
+                {% for post in collections.blog reversed %}
+                <li>
+                    <a href="/blog/{{post.data.page.fileSlug}}">{{post.data.date | date}} {{post.data.title}}</a>
+                </li>
+                {% endfor %}
+        </div>
+    </h3>
+</div>
