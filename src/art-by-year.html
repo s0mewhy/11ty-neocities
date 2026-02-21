@@ -1,0 +1,57 @@
+---js
+
+const layout = "layouts/base.njk";
+
+const years = [2026,2025,2024,2023,2022];
+
+const pagination = {
+    data: "years",
+    size: 1,
+    alias: "tag",
+    // addAllPagesToCollections: true,
+};
+
+const eleventyExcludeFromCollections = true;
+
+const eleventyComputed = {
+    title: "art tagged '{{ tag }}'",
+    permalink: function(data) {
+        // If DuplicatePermalinkOutputError occurs, check that no tag occurs
+        // with differing case, e.g. "RSS" and "rss".
+        return `/art-by-year/${this.slugify(data.tag)}/`;
+    }
+};
+---
+
+<div style="text-align:center">
+    <p>(click to enlarge)</p>
+    <h3><a href="/art-by-tag/all/">browse by tags</a> / browse by year:</h3>
+    <h3>
+    {% for year in years %}
+        {% if year == tag %}
+            {{year}} 
+        {% else %}
+            <a href="/art-by-year/{{year}}/">{{year}}</a>
+        {% endif %}
+    {% endfor %}
+    </h3>
+    <div id="gallery">
+        {% for art in allart %}
+            {% if art.img contains tag %}
+                {% if art.cw %}
+                <div class="gallery-img-container">
+                <a href="#img_{{forloop.index}}"><img class="gallery-img-blur" src="{{art.img}}"></a>
+                <a href="#_" class="lightbox trans" id="img_{{forloop.index}}"><img src="{{art.img}}"></a>
+                <div class="content-warning">
+                    <h3>cw: {{art.cw}}</h3>
+                    <p>(click to view)</p>
+                </div>
+                </div>
+                {% else %}
+                <a href="#img_{{forloop.index}}"><img class="gallery-img" src="{{art.img}}"></a>
+                <a href="#_" class="lightbox trans" id="img_{{forloop.index}}"><img src="{{art.img}}"></a>
+                {% endif %}
+            {% endif %}
+        {% endfor %}
+    </div>
+</div>
