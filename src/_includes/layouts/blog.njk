@@ -2,4 +2,27 @@
 layout: layouts/base.njk
 ---
 
+{% set previousPost = collections.blog | getPreviousCollectionItem(page) %}
+{% set nextPost = collections.blog | getNextCollectionItem(page) %}
+
+<div class="small-nav">
+{% if previousPost %}<a style="text-align:left" href="{{ previousPost.url }}">&larr; {{ previousPost.data.title }}</a>{% endif %}
+{% if nextPost %}<a style="text-align:right" href="{{ nextPost.url }}">{{ nextPost.data.title }} &rarr;</a>{% endif %}
+</div>
+
+<h2>{{title}}</h2>
+<p>({{date | date }})</p>
 <article>{{ content | safe}}</article>
+
+<div class="center"><h3><a href="/blog">&larr; back to /blog</a></h3></div>
+
+<script>
+  addEventListener("keydown", (event) => {
+    if ((event.key === "ArrowLeft") && "{{ previousPost.url }}") {
+      window.location.href = "{{ previousPost.url }}"
+    }
+    if ((event.key === "ArrowRight") && "{{ nextPost.url }}") {
+      window.location.href = "{{ nextPost.url }}"
+    } 
+  });
+</script>

@@ -8,6 +8,8 @@
     --orange: #d8601a;
     --bsky: #4d88ff;
     --tumblr: #894ea5;
+    --kofi: #38ac6c;
+    --inprnt: #2a728a;
     /* Default transparent border */
     --debug-border: #ff000000;
     /* Uncomment the line below to turn on red borders, helpful for debugging! */
@@ -63,6 +65,13 @@ EXCEPT for the navigation */
     text-decoration: underline;
 }
 
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0px 50px;
+}
+
 .orange {
     color: var(--orange);
 }
@@ -73,6 +82,14 @@ a.bsky {
 
 a.tumblr {
     color: var(--tumblr);
+}
+
+a.kofi {
+    color: var(--kofi);
+}
+
+a.inprnt {
+    color: var(--inprnt);
 }
 
 a:hover {
@@ -110,6 +127,7 @@ a:hover {
 
 #navbar ul.ul2 {
     background-color: var(--accent-color2);
+    height: 50px;
 }
 
 #navbar ul.ul3 {
@@ -134,6 +152,12 @@ a:hover {
 #navbar li a:hover {
     /* color: #a49cba; */
     color: var(--console-hover);
+}
+
+.small-nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 .icon-bar {
@@ -288,6 +312,14 @@ main {
     }
 }
 
+ul.no-bullets {
+    /* Remove bullets */
+    list-style-type: none;
+    /* Remove padding */
+    padding: 0;
+    text-align: justify;
+}
+
 /* gallery code */
 #gallery {
     line-height: 0;
@@ -305,7 +337,7 @@ main {
 
 /* container for cw text */
 .gallery-img-container {
-    position: relative; 
+    position: relative;
 }
 
 .content-warning {
@@ -317,7 +349,7 @@ main {
     padding-left: 5px;
     padding-right: 5px;
     /*prevent text from obstructing clicking the image */
-    pointer-events: none; 
+    pointer-events: none;
 }
 
 /* blur for cw images */
@@ -326,9 +358,9 @@ main {
     height: auto;
     margin-bottom: 5px;
     /* to match column gap */
-    filter: blur(20px); 
+    filter: blur(20px);
     /* prevent blur effect from spilling over the edge of the image boundary */
-    clip-path: inset(0px); 
+    clip-path: inset(0px);
     object-fit: cover;
     transition: filter 1s;
 }
