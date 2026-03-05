@@ -2,10 +2,8 @@
 
 const layout = "layouts/base.njk";
 
-const years = [2026,2025,2024,2023,2022];
-
 const pagination = {
-    data: "years",
+    data: "collections.artyears",
     size: 1,
     alias: "tag",
     // addAllPagesToCollections: true,
@@ -25,9 +23,9 @@ const eleventyComputed = {
 
 <div style="text-align:center">
     <p>(click to enlarge)</p>
-    <h3><a href="/art-by-tag/all/">browse by tags</a> / browse by year:</h3>
+    <h3>browse by year / <a href="/art-by-tag/all/">browse by tags</a></h3>
     <h3>
-    {% for year in years %}
+    {% for year in collections.artyears %}
         {% if year == tag %}
             {{year}} 
         {% else %}

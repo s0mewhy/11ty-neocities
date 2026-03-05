@@ -23,6 +23,17 @@ module.exports = function (eleventyConfig) {
         return tags.sort();
     });
 
+    eleventyConfig.addCollection("artyears", function (collection) {
+        const d = new Date();
+        let newest = 2026;
+        let oldest = 2022;
+        let years = new Array();
+        for (let y = newest; y >= oldest; y--) {
+            years.push(y);
+        } 
+        return years;
+    });
+
     return {
         passthroughFileCopy: true,
         dir: {

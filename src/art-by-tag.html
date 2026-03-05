@@ -20,14 +20,11 @@ const eleventyComputed = {
     }
 };
 
-const d = new Date();
-let currentyear = d.getFullYear();
-
 ---
 
 <div style="text-align:center">
     <p>(click to enlarge)</p>
-    <h3>browse by tags / <a href="/art-by-year/{{currentyear}}/">browse by year:</a></h3>
+    <h3><a href="/art-by-year/{{collections.artyears[0]}}/">browse by year</a> / browse by tags</h3>
     <h3>
     {% for t in collections.arttags %}
         {% if t == tag %}

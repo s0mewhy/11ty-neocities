@@ -1,17 +1,21 @@
 :root {
     /* colors */
-    --bg-color: #171719;
-    --accent-color: #c60c29;
-    --accent-color2: #a11227;
+    --bg-color: #141212;
+    --accent-color: #41477a; /* #c60c29; */
+    --accent-color2: #2A7B9B;;/* #a11227; */
     --text-color: #afb3b6;
     --console-hover: #afb3b6;
     --orange: #d8601a;
-    --bsky: #4d88ff;
-    --tumblr: #894ea5;
-    --kofi: #38ac6c;
-    --inprnt: #2a728a;
+    --somewhy: #A05BA6;
+    --artist: #656BA0;
+    /* colors from https://cssgradient.io/ */
+    --bsky: #2A7B9B;
+    --tumblr: #3F9E91;
+    --letterboxd: #57C785;
+    --kofi: #A1D26C;
+    --inprnt: #EDDD53;
     /* Default transparent border */
-    --debug-border: #ff000000;
+    --debug-border: #30141400;
     /* Uncomment the line below to turn on red borders, helpful for debugging! */
     /* --debug-border: #ff0000; */
     --bg-img: url("/img/art/dancer-banner1.jpg");
@@ -60,7 +64,7 @@ of the container */
 /* the area below is for all links on your page
 EXCEPT for the navigation */
 .container a {
-    color: var(--accent-color);
+    color: var(--accent-color2);
     font-weight: bold;
     text-decoration: underline;
 }
@@ -75,21 +79,26 @@ EXCEPT for the navigation */
 .orange {
     color: var(--orange);
 }
-
+.somewhy {
+    color: var(--somewhy);
+}
+.artist {
+    color: var(--artist);
+}
 a.bsky {
     color: var(--bsky);
 }
-
 a.tumblr {
     color: var(--tumblr);
 }
-
-a.kofi {
-    color: var(--kofi);
+a.letterboxd {
+    color: var(--letterboxd);
 }
-
 a.inprnt {
     color: var(--inprnt);
+}
+a.kofi {
+    color: var(--kofi);
 }
 
 a:hover {
@@ -271,7 +280,7 @@ main {
 }
 
 #footer a {
-    color: var(--accent-color);
+    color: var(--accent-color2);
     margin-top: 0;
     padding-top: 0;
 }
