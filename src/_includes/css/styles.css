@@ -221,6 +221,10 @@ a:hover {
     float: left;
 }
 
+.text-block {
+    padding: 20px;
+}
+
 .described-images {
     justify-content: space-between;
     display: flex;
