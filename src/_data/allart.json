@@ -1,5 +1,11 @@
 [
     {
+        "img": "/img/art/2026/ajw-2026.webp", "tags": ["all","cat","traditional"]
+    },
+    {
+        "img": "/img/art/2026/arc-and-haru-2026-photo.webp", "tags": ["all","ffxi","traditional"]
+    },
+    {
         "img": "/img/art/2026/voleur-2026.webp", "tags": ["all","commission","digital"]
     },
     {
@@ -31,6 +37,9 @@
     },
     {
         "img": "/img/art/2025/spock-stars-1200-dpi.webp", "tags": ["all","star trek tos","traditional"]
+    },
+    {
+        "img": "/img/art/2025/nin-1200-dpi.webp", "tags": ["all","music","traditional"]
     },
     {
         "img": "/img/art/2025/sailor-uranus.webp", "tags": ["all","digital"]

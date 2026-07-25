@@ -14,6 +14,7 @@
     --letterboxd: #57C785;
     --kofi: #A1D26C;
     --inprnt: #EDDD53;
+    --patreon: #e9ba3a;
     /* Default transparent border */
     --debug-border: #30141400;
     /* Uncomment the line below to turn on red borders, helpful for debugging! */
@@ -100,6 +101,10 @@ a.inprnt {
 a.kofi {
     color: var(--kofi);
 }
+a.patreon {
+    color: var(--patreon);
+}
+
 
 a:hover {
     color: var(--console-hover);
@@ -346,6 +351,9 @@ ul.no-bullets {
     -moz-column-gap: 5px;
     -ms-column-gap: 5px;
     column-gap: 5px;
+    -moz-box-orient: horizontal;
+    -webkit-box-orient: horizontal;
+    box-orient: horizontal;
 }
 
 /* container for cw text */
