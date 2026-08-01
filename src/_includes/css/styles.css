@@ -356,12 +356,12 @@ ul.no-bullets {
     box-orient: horizontal;
 }
 
-/* container for cw text */
+/* container for image text */
 .gallery-img-container {
     position: relative;
 }
 
-.content-warning {
+.image-label {
     position: absolute;
     top: 30px;
     left: 30px;

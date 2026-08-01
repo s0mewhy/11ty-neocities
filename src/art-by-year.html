@@ -40,8 +40,17 @@ const eleventyComputed = {
                 <div class="gallery-img-container">
                 <a href="#img_{{forloop.index}}"><img class="gallery-img-blur" src="{{art.img}}"></a>
                 <a href="#_" class="lightbox trans" id="img_{{forloop.index}}"><img src="{{art.img}}"></a>
-                <div class="content-warning">
+                <div class="image-label">
                     <h3>cw: {{art.cw}}</h3>
+                    <p>(click to view)</p>
+                </div>
+                </div>
+                {% elsif art.collab %}
+                <div class="gallery-img-container">
+                <a href="#img_{{forloop.index}}"><img class="gallery-img" src="{{art.img}}"></a>
+                <a href="#_" class="lightbox trans" id="img_{{forloop.index}}"><img src="{{art.img}}"></a>
+                <div class="image-label">
+                    <h3>collab: {{art.collab}}</h3>
                     <p>(click to view)</p>
                 </div>
                 </div>
