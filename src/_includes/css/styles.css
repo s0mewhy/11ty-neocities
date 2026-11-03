@@ -330,6 +330,10 @@ main {
     }
 }
 
+#widget {
+    font-size: small;
+}
+
 ul.no-bullets {
     /* Remove bullets */
     list-style-type: none;
