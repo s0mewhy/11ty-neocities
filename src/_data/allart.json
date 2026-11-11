@@ -1,5 +1,11 @@
 [
     {
+        "img": "/img/art/2026/woman-under-the-influence.webp", "tags": ["all","movies","digital"]
+    },
+    {
+        "img": "/img/art/2026/woman-under-the-influence-with-text.webp", "tags": ["all","movies","digital"]
+    },
+    {
         "img": "/img/art/2026/ink-of-a-sketch-by-feuer-in-soho.webp", "tags": ["all", "digital", "collab"],
         "collab": "sketch by feuer-in-soho"
     },
@@ -17,9 +23,6 @@
     },
     {
         "img": "/img/art/2026/luv-1967.webp", "tags": ["all","movies","digital"]
-    },
-    {
-        "img": "/img/art/2026/woman-under-the-influence-wip.webp", "tags": ["all","movies","digital"]
     },
     {
         "img": "/img/art/2026/santa-sangre-wip.webp", "tags": ["all","movies","digital"]

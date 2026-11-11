@@ -8,13 +8,6 @@
     --orange: #d8601a;
     --somewhy: #A05BA6;
     --artist: #656BA0;
-    /* colors from https://cssgradient.io/ */
-    --bsky: #2A7B9B;
-    --tumblr: #3F9E91;
-    --letterboxd: #57C785;
-    --kofi: #A1D26C;
-    --inprnt: #EDDD53;
-    --patreon: #e9ba3a;
     /* Default transparent border */
     --debug-border: #30141400;
     /* Uncomment the line below to turn on red borders, helpful for debugging! */
@@ -23,8 +16,8 @@
 }
 
 .icons {
-    /* set svg color to #c60c29; */
-    filter: invert(13%) sepia(88%) saturate(4420%) hue-rotate(343deg) brightness(86%) contrast(101%);
+    padding: 5px;
+    max-height: 31px;
 }
 
 .icons:hover {
@@ -86,25 +79,32 @@ EXCEPT for the navigation */
 .artist {
     color: var(--artist);
 }
+
+/* colors from https://cssgradient.io/ */
+/* old link colors */
+/*
 a.bsky {
-    color: var(--bsky);
+    color: #2A7B9B;
 }
 a.tumblr {
-    color: var(--tumblr);
+    color: #3F9E91;
 }
 a.letterboxd {
-    color: var(--letterboxd);
-}
-a.inprnt {
-    color: var(--inprnt);
+    color: #57C785;
 }
 a.kofi {
-    color: var(--kofi);
+    color: #A1D26C;
+}
+a.inprnt {
+    color: #EDDD53;
 }
 a.patreon {
-    color: var(--patreon);
+    color: #e9ba3a;
 }
-
+*/
+a.twocupsofsugar {
+    color: #ff8fba;
+}
 
 a:hover {
     color: var(--console-hover);
@@ -301,11 +301,6 @@ main {
 /* columns (mobile) */
 .container>* {
     width: 100%;
-}
-
-.img {
-    padding-top: 10px;
-    padding-bottom: 20px;
 }
 
 @media (max-width:900px) {
