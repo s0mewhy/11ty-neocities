@@ -67,7 +67,7 @@ EXCEPT for the navigation */
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 0px 50px;
+    gap: 0px 30px;
 }
 
 .orange {
@@ -335,6 +335,7 @@ ul.no-bullets {
     /* Remove padding */
     padding: 0;
     text-align: justify;
+    width: 200px;
 }
 
 /* gallery code */
